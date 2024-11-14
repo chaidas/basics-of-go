@@ -1,6 +1,5 @@
 package main
 
-// Importing fmt so that our PrintLn
 import "fmt"
 
 func printData() {
