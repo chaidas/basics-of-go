@@ -17,8 +17,6 @@ func main() {
 	price := 34.4
 	var age uint8 = 255
 	fmt.Println(message, price, url, age)
-	// no need to import functions.go, it's part of same package and thus printData() is available here
-	printData()
 
 	// "Numbers & collections" chapter
 	// id := 4
@@ -31,8 +29,36 @@ func main() {
 	str1 := "Single line text"
 	str2 := `Better to use backtick 
 for multi-line
-strings
-	`
-	fmt.Println(str1, str2)
+strings`
+	str3 := `<a href="#">Test</a>`
+	fmt.Println(str1, str2, str3)
+
+	fmt.Println("---------------------------------")
+
+	// Playing around with collections
+	var countries [10]string
+	countries[0] = "Argentina"
+	countries[1] = "Brazil"
+	countries[8] = "USA"
+
+	// Getting the length of arrays
+	fmt.Println("Length of Countries array", len(countries))
+
+	// Slice literal example
+	countriesSlice := []string{"France", "Japan", "Brazil"}
+	fmt.Println(countriesSlice)
+
+	// Map literal example
+	wellKnownPorts := map[string]int{
+		"http":  80,
+		"https": 443,
+	}
+	fmt.Println(wellKnownPorts)
+
+	fmt.Println("---------------------------------")
+
+	// Functions playground
+	// There's no need to import anything since functions.go is of the same package ("main")
+	functionPlayground()
 
 }

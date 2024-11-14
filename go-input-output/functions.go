@@ -2,9 +2,17 @@ package main
 
 import "fmt"
 
-func printData() {
-	fmt.Print("Hello ")
-	fmt.Println("World")
-	// Package var (from main.go) available here given it's a package var and thus in scope
-	fmt.Println(name)
+func functionPlayground() {
+	fmt.Println("Adding two numbers: ", add(10, 20))
 }
+
+func add(a, b int) int {
+	return a + b
+}
+
+// Example of a function returning _two_ values
+func addAndSubtract(a int, b int) (int, int) {
+	return a + b, a - b
+}
+
+// Passing a reference
