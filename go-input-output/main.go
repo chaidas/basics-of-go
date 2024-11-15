@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "go-input-output/data"
 
 var name = "Example of global var"
 
@@ -61,4 +62,24 @@ strings`
 	// There's no need to import anything since functions.go is of the same package ("main")
 	functionPlayground()
 
+	stateTax, cityTax := calculateTax(100)
+	fmt.Println(stateTax, cityTax)
+
+	fmt.Println(calculateTaxWithNames(100))
+
+	data.PointersAndRefs()
+
+}
+
+func calculateTax(price float32) (float32, float32) {
+	return price * 0.09, price * 0.02
+}
+
+// Example with named returns
+func calculateTaxWithNames(price float32) (stateTax float32, cityTax float32) {
+	// Return values are now available as local vars and can be manipulated...
+	stateTax = price * 0.09
+	cityTax = price * 0.02
+	// ... and we can simply return
+	return
 }
